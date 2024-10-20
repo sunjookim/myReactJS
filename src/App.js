@@ -15,11 +15,8 @@ function App() {
       {/* Routes router를 찾고, 찾으면 컴포넌트를 렌더링한다.
         * Routes 한 번에 하나의 Route만 렌더링한다. */}
       <Routes>
-        <Route path="/hello" element={
-          <h1>Hello</h1>
-        } />
-        <Route path="/movie/:id" element={<Detail />} /> {/* /id로 쓰면 그냥 텍스트로 인식하고, /:id로 쓰면 id를 변수로 인식한다. */}
-        <Route path="/" element={<Home />} /> {/* Home Route를 렌더링 */}
+        <Route path={process.env.PUBLIC_URL + "/movie/:id"} element={<Detail />} /> {/* /id로 쓰면 그냥 텍스트로 인식하고, /:id로 쓰면 id를 변수로 인식한다. */}
+        <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} /> {/* Home Route를 렌더링 */}
       </Routes>
     </Router>
   );
